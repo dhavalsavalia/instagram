@@ -1,4 +1,4 @@
-<div id="{{ post.slug }}" class="panel panel-default">
+<div id="{{ post.slug }}" class="panel panel-default" style="margin-top: 20px">
     <div class="panel-heading">
         <a href="{{ post.author.get_absolute_url }}">{{ post.author }}</a> |
         <a href="{% url 'posts:view' post.slug %}">{{ post.date_created|timesince }}</a>
