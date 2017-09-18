@@ -113,19 +113,3 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-
-if os.getenv('PRODUCTION') is True:
-    DEBUG = False
-
-    import dj_database_url
-    DATABASES['default'] = dj_database_url.config()
-
-    # Honor the 'X-Forwarded-Proto' header for request.is_secure()
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-    ALLOWED_HOSTS = ['.herokuapp.com']
-    STATIC_ROOT = 'staticfiles'
-else:
-    INSTALLED_APPS += (
-        'debug_toolbar',
-    )
